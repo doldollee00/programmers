@@ -1,56 +1,29 @@
-import java.util.HashMap;
+import java.util.Arrays;
 
 class Solution {
     public int solution(int a, int b, int c, int d) {
-        int answer = 0;
-        int[] arr = {a, b, c, d};
-        
-        HashMap<Integer, Integer> map = new HashMap<>();
 
-        for (int num : arr) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
-        }
+        int[] dice = { a, b, c, d };
+        Arrays.sort(dice);
 
-        if (map.size() == 1) {
-            return 1111 * a;
-        } else if (map.size() == 2) {
-            for (int key : map.keySet()) {
-                int count = map.get(key);
-                if (count == 3) {
-                    int p = key;
-                    int q = 0;
-                    for (int k : map.keySet()) {
-                        if (k != p) q = k;
-                    }
-                    return (int) Math.pow(10 * p + q, 2);
-                }
-            }
-            int[] keys = new int[2];
-            int idx = 0;
-            for (int key : map.keySet()) {
-                keys[idx++] = key;
-            }
-            return (keys[0] + keys[1]) * Math.abs(keys[0] - keys[1]);
-        } else if (map.size() == 3) {
-            int pair = 0;
-            int q = 0, r = 0;
-            for (int key : map.keySet()) {
-                int count = map.get(key);
-                if (count == 2) pair = key;
-                else if (q == 0) q = key;
-                else r = key;
-            }
-            return q * r;
+        int ans = 0;
+
+        if (dice[0] == dice[3]) {
+            ans = 1111 * dice[3];
+        } else if (dice[0] == dice[2] || dice[1] == dice[3]) {
+            ans = (int) Math.pow(dice[1] * 10 + (dice[0] + dice[3] - dice[1]), 2);
+        } else if (dice[0] == dice[1] && dice[2] == dice[3]) {
+            ans = (dice[0] + dice[3]) * (dice[3] - dice[0]);
+        } else if (dice[0] == dice[1]) {
+            ans = dice[2] * dice[3];
+        } else if (dice[1] == dice[2]) {
+            ans = dice[0] * dice[3];
+        } else if (dice[2] == dice[3]) {
+            ans = dice[0] * dice[1];
         } else {
-            int min = a;
-            min = Math.min(min, b);
-            min = Math.min(min, c);
-            min = Math.min(min, d);
-            return min;
+            ans = dice[0];
         }
+
+        return ans;
     }
 }
-
-
-
-
