@@ -1,5 +1,5 @@
 class Solution {
-    public int solution(int num) {
+    public int solution(long num) {
         int answer = 0;
         int i = 0;
         
@@ -16,8 +16,8 @@ class Solution {
                     num = num * 3 + 1;
                     i++;
                 }
-            } 
-            if(i<400) answer = i;
+            } System.out.println(i);
+            if(i<500) answer = i;
             else answer = -1;
         }
         return answer;
