@@ -1,0 +1,5 @@
+SELECT BOOK_ID, 
+        substr(PUBLISHED_DATE, 1, 10) as 'PUBLISHED_DATE'
+from BOOK 
+where CATEGORY like '인문' AND PUBLISHED_DATE like '2021%'
+order by PUBLISHED_DATE ASC
