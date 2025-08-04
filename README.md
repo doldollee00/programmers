@@ -21,25 +21,42 @@
 ### 패키지 구조
 src/main/java/org.example.memo
 
-
 ├── controller
+
   ├── CommentController
+  
   ├── MemoController
+  
 ├── dto
+
   ├── CommentRequestDto
+  
   ├── CommentResponseDto
+  
   ├── MemoRequestDto
+  
   ├── MemoResponseDto
+  
 ├── entity
+
   ├── BaseEntity
+  
   ├── Comment
+  
   ├── Memo
+  
 ├── repository
+
   ├── CommentService
+  
   ├── MemoService
+  
 ├── service
+
   ├── CommentService
+  
   ├── MemoService
+  
 ├── MemoApplication
  
 ## 트러블 슈팅
