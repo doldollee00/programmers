@@ -21,43 +21,24 @@
 ### 패키지 구조
 <pre>
 src/main/java/org.example.memo
-
 ├── controller
-
   ├── CommentController
-  
   ├── MemoController
-  
 ├── dto
-
   ├── CommentRequestDto
-  
   ├── CommentResponseDto
-  
   ├── MemoRequestDto
-  
   ├── MemoResponseDto
-  
 ├── entity
-
   ├── BaseEntity
-  
-  ├── Comment
-  
+  ├── Comment 
   ├── Memo
-  
 ├── repository
-
-  ├── CommentService
-  
-  ├── MemoService
-  
+  ├── CommentService  
+  ├── MemoService  
 ├── service
-
-  ├── CommentService
-  
-  ├── MemoService
-  
+  ├── CommentService 
+  ├── MemoService  
 ├── MemoApplication
 </pre>
  
