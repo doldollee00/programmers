@@ -19,6 +19,7 @@
  - 댓글 등록
  
 ### 패키지 구조
+<pre>
 src/main/java/org.example.memo
 
 ├── controller
@@ -58,6 +59,7 @@ src/main/java/org.example.memo
   ├── MemoService
   
 ├── MemoApplication
+</pre>
  
 ## 트러블 슈팅
  - [프로젝트 TIL](https://dinga87.tistory.com/category/SPARTA%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
