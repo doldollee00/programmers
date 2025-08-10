@@ -1,0 +1,5 @@
+SELECT BOARD_ID, WRITER_ID, TITLE, PRICE,
+        IF(STATUS = "DONE", '거래완료', IF(STATUS = "RESERVED", '예약중', '판매중')) AS STATUS
+from USED_GOODS_BOARD 
+where CREATED_DATE like "2022-10-05"
+order by BOARD_ID DESC
