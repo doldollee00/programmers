@@ -1,0 +1,13 @@
+select m.MEMBER_NAME,
+    r.REVIEW_TEXT,
+    DATE_FORMAT(r.REVIEW_DATE, "%Y-%m-%d") REVIEW_DATE
+from (
+    SELECT MEMBER_ID, count(REVIEW_ID)
+    FROM REST_REVIEW
+    group by MEMBER_ID
+    order by 2 DESC LIMIT 1
+) rr
+JOIN REST_REVIEW r ON rr.MEMBER_ID = r.MEMBER_ID
+JOIN MEMBER_PROFILE m ON r.MEMBER_ID = m.MEMBER_ID
+order by 3, 2
+
