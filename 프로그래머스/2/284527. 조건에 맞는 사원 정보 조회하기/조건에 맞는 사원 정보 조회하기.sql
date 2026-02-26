@@ -1,0 +1,15 @@
+WITH YE as (
+    select SUM(SCORE) AS TOTALSCORE, EMP_NO
+    from HR_GRADE
+    where YEAR = 2022
+    group by EMP_NO
+)
+
+select Y.TOTALSCORE AS SCORE,
+    Y.EMP_NO,
+    E.EMP_NAME,
+    E.POSITION,
+    E.EMAIL
+from HR_EMPLOYEES E JOIN YE Y ON E.EMP_NO = Y.EMP_NO
+order by Y.TOTALSCORE DESC
+LIMIT 1;
