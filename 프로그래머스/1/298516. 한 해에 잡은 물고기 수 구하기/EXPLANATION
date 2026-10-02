@@ -1,0 +1,20 @@
+## 🐬 MySQL 문자열 추출 함수 (앞에서부터 4글자 검토)
+
+### 1. ⬅️ LEFT() 함수
+* **설명**: 문자열의 **왼쪽(시작 지점)부터 지정한 개수만큼** 글자를 잘라 반환합니다.
+* **구문**: `LEFT(컬럼명, 글자수)`
+* **MySQL 예제**: 
+  -- FISH_TYPE 컬럼에서 앞의 4글자만 조회
+  SELECT LEFT(FISH_TYPE, 4) AS SHORT_NAME 
+  FROM FISH_INFO;
+
+### 2. ✂️ SUBSTRING() 또는 SUBSTR() 함수
+* **설명**: 문자열의 **특정 위치를 지정해서** 원하는 만큼 잘라냅니다. 
+* **특징**: MySQL에서 문자열의 첫 번째 글자 위치 인덱스는 **`1`**부터 시작합니다.
+* **구문**: `SUBSTRING(컬럼명, 시작위치, 글자수)`
+* **MySQL 예제**:
+  -- 1번째 글자부터 시작해서 4글자를 추출
+  SELECT SUBSTRING(FISH_TYPE, 1, 4) AS SHORT_NAME 
+  FROM FISH_INFO;
+
+---
